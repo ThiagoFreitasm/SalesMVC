@@ -16,6 +16,7 @@ namespace SalesWebMvc
         {
             CreateWebHostBuilder(args).Build().Run();
         }
+        //test git
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
