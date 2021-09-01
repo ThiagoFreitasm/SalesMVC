@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SalesWebMvc.Controllers
 {
-    public class SellersController1 : Controller
+    public class SellersController : Controller
     {
         public IActionResult Index()
         {
