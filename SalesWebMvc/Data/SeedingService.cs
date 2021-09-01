@@ -24,6 +24,7 @@ namespace SalesWebMvc.Data
             {
                 return; //DB ja foi populado
             }
+            //Code first =  Work flow cria os objetos e dai cria(insere) a base de dados.  
             //********   Criando os departamentos(Objetos)   **************
             Department d1 = new Department(1, "Computers");
             Department d2 = new Department(2, "Eletronics");
@@ -73,7 +74,7 @@ namespace SalesWebMvc.Data
 
 
 
-            //**************    Solicitar adicionar esses objetos no banco de dados   *********************
+            //**************    ADICIONANDO os objetos no banco de dados   *********************
             _context.Department.AddRange(d1, d2, d3, d4);
             _context.Seller.AddRange(s1, s2,s3,s4,s5,s6);
             _context.SalesRecord.AddRange(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10,
