@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SalesWebMvc.Models;
 using SalesWebMvc.Services;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,19 @@ namespace SalesWebMvc.Controllers
         {
             var list = _sellerService.FindAll(); //Model
             return View(list); //View
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+        //Indicar que a acado de baixo é de pos e nao de get. Para isso coloca a acao abaixo entre []
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Seller seller)
+        {
+            _sellerService.Insert(seller);
+            return RedirectToAction(nameof (Index));
         }
     }
 }
