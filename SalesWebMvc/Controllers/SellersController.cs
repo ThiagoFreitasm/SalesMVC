@@ -27,7 +27,7 @@ namespace SalesWebMvc.Controllers
         {
             return View();
         }
-        //Indicar que a acado de baixo é de pos e nao de get. Para isso coloca a acao abaixo entre []
+        //Indicar que a ação de baixo é de post e nao de get. Para isso coloca a açao abaixo entre []
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Seller seller)
