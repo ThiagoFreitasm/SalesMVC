@@ -11,7 +11,7 @@ namespace SalesWebMvc.Services
     {
         //Criando uma dependencia DBCONTEXT(SalesWebMvcContext.cs)
         //O readyonly é uma boa pratica para previnir que essa dependencia nao seja alterada.
-        public readonly SalesWebMvcContext _context;
+        private readonly SalesWebMvcContext _context;
 
         //Constructor
         public SellerService(SalesWebMvcContext context)
