@@ -1,4 +1,5 @@
-﻿using SalesWebMvc.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SalesWebMvc.Data;
 using SalesWebMvc.Models;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,11 @@ namespace SalesWebMvc.Services
             _context = context;
         }
 
-        public List<Department> FindAll()
+        public async Task<List<Department>> FindAllAsync()
         {
-            return _context.Department.OrderBy(x => x.Name).ToList();
+            //Para fazer uma chamada asincrona dentro do método temos que avisar o compilador que 
+            //se trata de uma chamada asincrona incluindo o AWAIT após o return.
+            return await _context.Department.OrderBy(x => x.Name).ToListAsync();
         }
     }
 }
